@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>GatoKiRi</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        $('#open').click(function () {
+            $('#dialog').dialog('open');
+
+        });
+        $('#close').click(function () {
+            $('#dialog').dialog('close');
+
+        });
+
+        jQuery(document).ready(function () {
+            jQuery("#dialog").dialog({
+                autoOpen: true,
+                modal: true,
+                open: function () {
+                    $('.ui-widget-overlay').remove();
+                }
+            });
+        });
+    </script>
+
+
+    <style rel="stylesheet" type="text/css">
+
+        body {font-family: Arial, Helvetica, sans-serif;}
+
+        /* Set a style for all buttons */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        /* Change styles for span and cancel button on extra small screens */
+        @media print { }
+
+        @media only screen and (min-width: 480px) { }
+        @media only screen and (min-width: 600px) { }
+        @media only screen and (min-width: 992px) { }
+        @media only screen and (min-width: 1382px) { }
+
+        @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        only screen and (min--moz-device-pixel-ratio: 1.5),
+        only screen and (-o-min-device-pixel-ratio: 3/2),
+        only screen and (min-device-pixel-ratio: 1.5) { }
+
+        /*Table CSS*/
+
+        .tabela {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .td, .th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        .tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div style="display:table;background-color: #CCCCCC;">
+
+    <div style="display:table;padding-left: 10px;">
+
+        <div style="float:left;">
+            <table bgcolor="#CCCCCC">
+                <tr><td rowspan="4">
+                    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><a href="/relatorio_geral">Venda $</a></button>
+                </td></tr>
+            </table>
+        </div>
+
+        <div style="float:left;">
+            <table bgcolor="#CCCCCC">
+                <tr><td rowspan="4">
+                    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><a href="/relatorio_geral">Troca</a></button>
+                </td></tr>
+            </table>
+        </div>
+
+        <div style="float:left;">
+            <table bgcolor="#CCCCCC">
+                <tr><td rowspan="4">
+                    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><a href="/relatorio_geral">Cadastrar Item</a></button>
+                </td></tr>
+            </table>
+        </div>
+
+        <div style="float:left;">
+            <table bgcolor="#CCCCCC">
+                <tr><td rowspan="4">
+                    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><a href="/relatorio_geral">Relatório Geral</a></button>
+                </td></tr>
+            </table>
+        </div>
+    </div>
+
+    <div style="float:left;width:30%;padding-left: 10px;">
+        <table border="0" bgcolor="#CCCCCC">
+            <tr>
+                <th colspan="1">Filtro de Item</th>
+            </tr>
+            <tr>
+                <td colspan="1">Cód. Item: <input type="text" size="40px" /></td>
+            </tr>
+            <tr>
+                <td colspan="1">Venda: <input type="text" size="40px" /></td>
+            </tr>
+            <tr>
+                <td colspan="1">Nome do Item: <input type="text" size="40px" /></td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="float:left;width:60%;padding-left: 60px;">
+        <table border="0" bgcolor="#CCCCCC">
+            <tr>
+                <th colspan="4">Filtro de Data</th>
+            </tr>
+            <tr>
+                <td colspan="2">Data Início: <input type="date" /></td>
+                <td colspan="2">Data Término: <input type="date" /></td>
+            </tr>
+            <tr>
+                <td colspan="1">Recebimento: <input type="radio" /></td>
+                <td colspan="1">Cancelamento: <input type="radio" /></td>
+                <td colspan="1">Vale: <input type="radio" /></td>
+                <td colspan="1">Retirada Expecífica: <input type="radio" /></td>
+            </tr>
+            <tr>
+                <td colspan="1">Pag. Pendente: <input type="radio" /></td>
+                <td colspan="1">Desconto: <input type="radio" /></td>
+                <td colspan="1">Trocar: <input type="radio" /></td>
+                <td colspan="1">Defeito: <input type="radio" /></td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <table border="0" bgcolor="#e6e6fa" height="100%" cellspacing="30px" style="width:100%">
+            <tr bgcolor="#CCCCCC">
+                <th width="100%px" height="600px">
+                    <div id="dialog">Eu sou uma janela!
+                        <br />
+                        <button id="close">Fechar janela</button>
+                    </div>
+                </th></tr>
+        </table>
+
+    </div>
+
+    <div class="tabela">
+        <table style="width:100%">
+            <tr class="tr">
+                <th class="th">Dia</th>
+                <th class="th">Encerrado</th>
+                <th class="th">Itens</th>
+                <th class="th">Vendidos</th>
+                <th class="th">Restante</th>
+                <th class="th">Troca</th>
+                <th class="th">Defeito</th>
+                <th class="th">Numeracao/Tamanho</th>
+            </tr>
+            <tr class="tr">
+                <td class="td">Ter. 15/11/2017</td>
+                <td class="td">Seg. 22/01/2017</td>
+                <td class="td">45</td>
+                <td class="td">45</td>
+                <td class="td">0</td>
+                <td class="td">00</td>
+                <td class="td">00</td>
+                <td class="td">Num. 34/00 Num. 35/00 Num. 36/00</td>
+            </tr>
+            <tr class="tr">
+                <td class="td">Sab. 18/09/2017</td>
+                <td class="td">Qui. 14/11/2017</td>
+                <td class="td">52</td>
+                <td class="td">52</td>
+                <td class="td">0</td>
+                <td class="td">00</td>
+                <td class="td">00</td>
+                <td class="td">Num. 34/00 Num. 35/00 Num. 36/00</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div style="float:left;">
+    <p>Get your greeting <a href="/greeting">here</a></p>
+</div>
+</body>
+</html>
